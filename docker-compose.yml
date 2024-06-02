@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: './Dockerfile'
+    network_mode: bridge
+    ports:
+      - '9017:3000'
+    environment:
+      DISCORD_BOT_TOKEN: ${DISCORD_BOT_TOKEN} # Discord bot token
+      MONGODB_URI: ${MONGODB_URI} # mongodb://username:password@localhost:27017/exampletsbot?authSource=admin&readPreference=primary&directConnection=true&ssl=false
